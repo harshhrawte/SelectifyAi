@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranked Resumes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='r.css') }}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">SelectifyAi</div>
+        <div class="nav-links">
+            <a href="#about" class="bold-link">About Us</a>
+            <a href="#faq" class="bold-link">FAQ</a>
+            
+        </div>
+    </div>
+
+    <div class="resume-ranking-box">
+        Ranked Resumes
+    </div>
+    
+
+    {% if ranked_resumes %}
+    <div class="resumes-container">
+        {% for resume in ranked_resumes %}
+        <div class="resume-box">
+            <div class="rank-label">Rank {{ loop.index }}</div> <!-- Rank Added Here -->
+            <p><strong>Name:</strong> {{ resume['name'] }}</p>
+            <p><strong>Final Score:</strong> {{ resume['final_score'] | round(2) }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <p>No resumes ranked yet. Please upload resumes.</p>
+    {% endif %}
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SelectifyAi</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <h1 class="title">SelectifyAi</h1>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Image Slider -->
+    <section class="hero">
+        <div class="slider">
+            <img src="/static/9.jpg" alt="Slide 1" class="slider-image">
+            <img src="/static/ai2.jpeg" alt="Slide 2" class="slider-image">
+            <img src="/static/ai3.png" alt="Slide 3" class="slider-image">
+            <img src="/static/666.jpg" alt="Slide 3" class="slider-image">
+            <button class="arrow left-arrow" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="arrow right-arrow" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Main Section -->
+    <main class="main-content">
+        <!-- Overview, How It Works, and Get Started -->
+        <section class="info-section">
+            <div class="info-container">
+                <h2>Overview</h2>
+                <p>Discover how SelectifyAi helps you streamline your resume screening process.</p>
+            </div>
+            <div class="info-container">
+                <h2>How It Works</h2>
+                <p>Upload your resume and let our advanced algorithms do the work.</p>
+            </div>
+            <div class="info-container">
+                <h2>Get Started</h2>
+                <p>Sign up today and take your recruitment process to the next level.</p>
+            </div>
+        </section>
+
+        <!-- Job Description and Skills Section -->
+        <section class="job-description-section">
+            <div class="info-container">
+                <h2>Job Description</h2>
+                <textarea id="jobDescription" name="jobDescription" placeholder="Enter the job description here..." rows="6" cols="50"></textarea>
+            </div>
+            <div class="info-container">
+                <h2>Relevant Skills Required</h2>
+                <div class="skills-container">
+                    <input type="text" id="skillInput" placeholder="Enter skill and press Enter" onkeydown="addSkill(event)">
+                    <ul id="skillsList"></ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Upload Section -->
+        <section class="upload-section">
+            <h1>Welcome to SelectifyAi</h1>
+            <p>Your ultimate resume screening tool</p>
+            <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="drag-and-drop">
+                    <p>Drag and drop your file here or click the upload button below.</p>
+                    <button class="upload-btn" type="button" onclick="document.getElementById('fileInput').click()">Upload from Device</button>
+                    <input type="file" id="fileInput" name="resumes" accept=".pdf, .docx" multiple style="display:none;">
+                    <div id="fileList"></div> <!-- To show the uploaded file names -->
+                </div>
+                <textarea name="job_description" id="hiddenJobDesc" style="display:none;"></textarea>
+                <input type="hidden" name="skills" id="hiddenSkills">
+                <button id="proceed-button" class="proceed-btn" type="submit">Proceed</button>
+            </form>
+        </section>
+         <!-- Ranked Resumes Section -->
+         <section id="ranked-resumes" style="display: none;">
+            <h2>Ranked Resumes</h2>
+            <ul id="resume-list"></ul>
+        </section>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
