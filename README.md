@@ -1,14 +1,58 @@
-SelectifyAi🚀
+# SelectifyAi 🚀
 
-SelectifyAi is an AI-powered resume screening tool designed to streamline the hiring process for HR professionals and recruiters. With the ability to handle up to 100 resumes at a time, SelectifyAI uses advanced machine learning and natural language processing (NLP) techniques to rank resumes based on their relevance to a job description and required skills.
+SelectifyAi is an AI-powered resume screening tool designed to streamline the hiring process for HR professionals and recruiters. It can process up to 100 resumes simultaneously and ranks candidates based on relevance to the job description and required skills using advanced machine learning and NLP techniques.
 
-Key Features ✨
-AI-Powered Resume Screening: Uses RoBERTa embeddings and TF-IDF vectorization to match resumes with job descriptions.
+---
 
-Skill-Based Filtering: Identifies and ranks resumes based on required skills using fuzzy matching.
+## Key Features ✨
 
-High Capacity: Can process up to 100 resumes simultaneously, making it ideal for large-scale recruitment drives.
+- **AI-Powered Resume Screening:** Utilizes RoBERTa embeddings and TF-IDF vectorization to match resumes with job descriptions.
+- **Skill-Based Filtering:** Applies fuzzy matching to identify and rank resumes by required skills.
+- **High Capacity:** Efficiently processes up to 100 resumes at once, perfect for large-scale recruitment.
+- **Ranked Results:** Provides a ranked list of candidates based on suitability for the role.
+- **User-Friendly Interface:** Simple interface to upload resumes, input job descriptions, and view results.
 
-Ranked Results: Provides a ranked list of candidates based on their suitability for the role.
+---
 
-User-Friendly Interface: Easy-to-use interface for uploading resumes, adding job descriptions, and viewing results.
+## Getting Started
+
+### Prerequisites
+
+- Python 3.8+
+- Git
+
+### Installation and Setup
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/harshhrawte/SelectifyAi.git
+   cd app
+Create and activate a virtual environment (optional but recommended):
+
+bash
+Copy
+Edit
+python -m venv env
+source env/bin/activate     # On Linux/macOS
+.\env\Scripts\activate      # On Windows PowerShell
+Install required packages:
+
+bash
+Copy
+Edit
+pip install -r requirements.txt
+Run the application:
+
+bash
+Copy
+Edit
+
+python app.py
+
+Open your browser and go to:
+
+cpp
+Copy
+Edit
+http://127.0.0.1:5000
