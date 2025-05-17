@@ -1,0 +1,12 @@
+Flask==3.1.0
+flask-cors==5.0.1
+waitress==3.0.2
+PyPDF2==3.0.1
+python-docx==1.1.2
+spacy==3.8.4
+torch==2.6.0+cu126
+pandas==2.2.3
+scikit-learn==1.6.1
+fuzzywuzzy==0.18.0
+transformers==4.51.3
+
