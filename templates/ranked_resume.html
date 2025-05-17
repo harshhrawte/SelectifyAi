@@ -14,27 +14,31 @@
         <div class="nav-links">
             <a href="#about" class="bold-link">About Us</a>
             <a href="#faq" class="bold-link">FAQ</a>
-            
         </div>
     </div>
 
+    <!-- Resume Ranking Section -->
     <div class="resume-ranking-box">
-        Ranked Resumes
+        <h1>Top Ranked Resumes</h1>
     </div>
-    
 
     {% if ranked_resumes %}
     <div class="resumes-container">
         {% for resume in ranked_resumes %}
         <div class="resume-box">
-            <div class="rank-label">Rank {{ loop.index }}</div> <!-- Rank Added Here -->
+            <div class="rank-label">Rank {{ loop.index }}</div>
             <p><strong>Name:</strong> {{ resume['name'] }}</p>
             <p><strong>Final Score:</strong> {{ resume['final_score'] | round(2) }}</p>
+            {% if resume['file_path'] %}
+            <a href="{{ resume['file_path'] }}" target="_blank" class="view-resume-button">View Resume</a>
+            {% endif %}            
         </div>
         {% endfor %}
     </div>
     {% else %}
+    <div class="no-resumes-message">
         <p>No resumes ranked yet. Please upload resumes.</p>
+    </div>
     {% endif %}
 
 </body>
